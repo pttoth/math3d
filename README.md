@@ -4,7 +4,7 @@
 
 ### Legal: Any reusage of this library has to credit him as the author of the original code.
 
-======================================================================
+-----
 
 ## Modifications made to the original
 
