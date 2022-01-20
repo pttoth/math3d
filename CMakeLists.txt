@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(math3d_debian LANGUAGES C CXX)
+project(math3d LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
