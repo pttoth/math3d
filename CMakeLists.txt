@@ -1,13 +1,12 @@
-
 cmake_minimum_required(VERSION 3.5)
 
-project(math3d_win32 LANGUAGES C CXX)
+project(math3d_debian LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-set(MY_PROJ_ROOT ${PROJECT_SOURCE_DIR}/../..)
+set(MY_PROJ_ROOT ${PROJECT_SOURCE_DIR})
 
 #set(MY_BUILD_DIR ${MY_PROJ_ROOT}/build)
 
@@ -16,12 +15,11 @@ set(MY_OUTPUT_DIR_WIN64 ${MY_PROJ_ROOT}/bin/win64)
 set(MY_OUTPUT_DIR_DEBIAN ${MY_PROJ_ROOT}/bin/debian)
 
 #set up actual output directory
-set(MY_OUTPUT_DIR ${MY_OUTPUT_DIR_WIN32})
+set(MY_OUTPUT_DIR ${MY_OUTPUT_DIR_DEBIAN})
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
-
 
 add_library(math3d
     ${MY_PROJ_ROOT}/src/constants.cpp
@@ -49,6 +47,7 @@ add_library(math3d
     )
 
 target_include_directories(math3d PRIVATE
+    /usr/include
     ${MY_PROJ_ROOT}/include
     )
 
