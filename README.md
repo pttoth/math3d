@@ -12,7 +12,7 @@
 
 ### Added macro: MATH_REMOVE_PT_NAMESPACE
 
-> Define it in "math.h" at the marked line to enable if needed.
+> Define it in the project, if needed
 
 ### Added macro: MATH_ENABLE_SWIZZLE
 
@@ -20,7 +20,7 @@
 
 > A tradeoff is that it bloats the binaries and severely slows down compilation when included in multiple compilation units.
 
-> Define it in "math.h" at the marked line to enable if needed.
+> Define it in the project, if needed
 
 ### Temporarily removed features that used VS compiler-specific syntax:
 

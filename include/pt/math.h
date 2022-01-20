@@ -8,10 +8,6 @@
 
 #pragma once
 
-//tweak features here
-//#define MATH_REMOVE_PT_NAMESPACE
-//#define MATH_ENABLE_SWIZZLE
-
 #include <cmath>
 #include <cstdlib>
 #include <stdexcept>
