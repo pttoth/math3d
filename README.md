@@ -4,7 +4,7 @@
 
 ### Legal: Any reusage of this library has to credit him as the author of the original code.
 
-====================================================================================================
+======================================================================
 
 ## Modifications made to the original
 
@@ -12,7 +12,7 @@
 
 ### Added macro: MATH_REMOVE_PT_NAMESPACE
 
-> Define it in the project, if needed
+> Define it during compilation, if needed
 
 ### Added macro: MATH_ENABLE_SWIZZLE
 
@@ -20,7 +20,7 @@
 
 > A tradeoff is that it bloats the binaries and severely slows down compilation when included in multiple compilation units.
 
-> Define it in the project, if needed
+> Define it during compilation, if needed
 
 ### Temporarily removed features that used VS compiler-specific syntax:
 
