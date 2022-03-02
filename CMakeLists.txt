@@ -20,7 +20,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
 add_library(math3d
     ${MY_PROJ_ROOT}/src/constants.cpp
     ${MY_PROJ_ROOT}/include/pt/math.h
-    ${MY_PROJ_ROOT}/include/pt/math/
     ${MY_PROJ_ROOT}/include/pt/math/bool1.h
     ${MY_PROJ_ROOT}/include/pt/math/bool2.h
     ${MY_PROJ_ROOT}/include/pt/math/bool3.h
