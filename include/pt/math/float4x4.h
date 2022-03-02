@@ -355,7 +355,7 @@ public:
 
 	float4x4 invert() const
 	{
-		register float det;
+        float det;
 
 		if( _03 != 0.0f || _13 != 0.0f || _23 != 0.0f || _33 != 1.0f )
 		{
@@ -381,7 +381,7 @@ public:
 		else
 		{
 		   float d10, d20, d21, d31, d32, d03;
-		   register float im00, im10, im20, im30;
+           float im00, im10, im20, im30;
 
 		   det = 1.0f / det;
 
