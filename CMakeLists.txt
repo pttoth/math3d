@@ -40,16 +40,20 @@ add_library(math3d
     ${MY_PROJ_ROOT}/include/pt/math/int3.h
     ${MY_PROJ_ROOT}/include/pt/math/int4.h
     ${MY_PROJ_ROOT}/include/pt/math/intswizzle.h
-    )
+)
 
 target_include_directories(math3d PRIVATE
     /usr/include
     ${MY_PROJ_ROOT}/include
-    )
+)
+
+set_target_properties(ptlib PROPERTIES COMPILE_FLAGS
+    "${MY_COMPILE_FLAGS} -fPIC"
+)
 
 #define these to enable/disable features
 #  note that you need to define these in the project too where you link the library!
 target_compile_definitions(math3d PRIVATE
 #    MATH_REMOVE_PT_NAMESPACE=1
 #    MATH_ENABLE_SWIZZLE=1
-    )
+)
