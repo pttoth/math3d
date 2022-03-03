@@ -13,10 +13,10 @@
 #include <stdexcept>
 
 //#pragma warning( disable : 4201 )
+#pragma GCC diagnostic push
 //#pragma GCC diagnostic ignored "-Wgnu-anonymous-struct"
 //#pragma GCC diagnostic ignored "-Wnested-anon-types"
 //#pragma GCC diagnostic ignored "-Wtautological-unsigned-zero-compare"
-#pragma GCC diagnostic ignored "-Wabsolute-value"
 #pragma GCC diagnostic ignored "-Wunused-value"
 #pragma GCC diagnostic ignored "-Wtype-limits"
 #pragma GCC diagnostic ignored "-Wreturn-type"
@@ -44,11 +44,5 @@
 
 #include "math/float4x4.h"
 
-#pragma GCC diagnostic warning "-Wreturn-type"
-#pragma GCC diagnostic warning "-Wtype-limits"
-#pragma GCC diagnostic warning "-Wunused-value"
-#pragma GCC diagnostic warning "-Wabsolute-value"
-//#pragma GCC diagnostic warning "-Wtautological-unsigned-zero-compare"
-//#pragma GCC diagnostic warning "-Wnested-anon-types"
-//#pragma GCC diagnostic warning "-Wgnu-anonymous-struct"
+#pragma GCC diagnostic pop
 //#pragma warning( enable : 4201 )
