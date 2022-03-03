@@ -46,7 +46,7 @@
 
 namespace pt{
 
-math::float3
+inline math::float3
 Vecf3FromVecf4(const math::float4& vec)
 {
     return math::float3(vec.x /vec.w,
