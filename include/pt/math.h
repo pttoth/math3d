@@ -45,16 +45,17 @@
 #include "math/float4x4.h"
 
 namespace pt{
+namespace math{
 
-inline math::float3
-Vecf3FromVecf4(const math::float4& vec)
+inline pt::math::float3
+Vecf3FromVecf4(const pt::math::float4& vec)
 {
-    return math::float3(vec.x /vec.w,
-                        vec.y /vec.w,
-                        vec.z /vec.w);
+    return pt::math::float3(vec.x /vec.w,
+                            vec.y /vec.w,
+                            vec.z /vec.w);
 }
 
-}
+} }
 
 
 #pragma GCC diagnostic pop
