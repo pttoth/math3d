@@ -2,8 +2,10 @@
 
 #include <sstream>
 
-std::string pt::math::
-VectorToString(size_t count, float* v, Verbosity mode)
+using namespace pt::math;
+
+std::string
+VectorToString(size_t count, const float* const v, Verbosity mode)
 {
     std::stringstream ss;
     if(mode == Verbosity::FRIENDLY){
@@ -39,7 +41,7 @@ Float3ToString(const float3 &v, Verbosity mode)
 std::string pt::math::
 Float4ToString(const float4 &v, Verbosity mode)
 {
-    return PrintVector(4, v.v, mode);
+    return VectorToString(4, v.v, mode);
 }
 
 
