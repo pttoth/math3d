@@ -47,16 +47,25 @@
 namespace pt{
 namespace math{
 
+//controls print functions' verbosity
+enum class Verbosity{
+    COMPACT,
+    FRIENDLY
+};
+
+std::string Float3ToString(const pt::math::float3& v, Verbosity mode = Verbosity::FRIENDLY);
+std::string Float4ToString(const pt::math::float4& v, Verbosity mode = Verbosity::FRIENDLY);
+
+std::string Float4x4ToString(const pt::math::float4x4& m, Verbosity mode = Verbosity::FRIENDLY);
+
 inline pt::math::float3
 Vecf3FromVecf4(const pt::math::float4& vec)
 {
-    return pt::math::float3(vec.x /vec.w,
-                            vec.y /vec.w,
-                            vec.z /vec.w);
+    return pt::math::float3(vec.x/vec.w, vec.y/vec.w, vec.z/vec.w);
 }
 
-} }
 
+} }
 
 #pragma GCC diagnostic pop
 //#pragma warning( enable : 4201 )

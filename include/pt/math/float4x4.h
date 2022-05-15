@@ -191,6 +191,18 @@ public:
 		return r;
 	}
 
+
+    inline bool operator==(const float4& rhs)
+    {
+        for(int i=0; i<16; ++i){
+            if(l[i] != rhs.l[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 	static float4x4 scaling(const float3& factors)
 	{
 	    float4x4 s = identity;
