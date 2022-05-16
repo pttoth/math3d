@@ -163,6 +163,16 @@ public:
 		return *this;
 	}
 
+    inline bool operator==(const float4x4& rhs)
+    {
+        for(int i=0; i<16; ++i){
+            if(l[i] != rhs.l[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
 	float4 mul(const float4& v) const
 	{
 		return float4( v.dot( *(float4*)m[0] ), v.dot( *(float4*)m[1] ), v.dot( *(float4*)m[2] ), v.dot( *(float4*)m[3] ) );

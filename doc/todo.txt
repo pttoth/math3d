@@ -1,0 +1,10 @@
+--------------------------------------------------
+	todo for v1.1.0
+--------------------------------------------------
+move CalcAngle() to classes
+
+create ToString functions to all classes
+
+write changelog
+
+--------------------------------------------------
