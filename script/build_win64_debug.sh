@@ -9,7 +9,7 @@ popd > /dev/null
 pushd $scriptdir/..
 
 builddir="./build/win64_debug"
-cmake ./projects/win64 -B$builddir -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake . -B$builddir -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug
 
 pushd $builddir
 
