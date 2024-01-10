@@ -25,6 +25,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 
+#available configurations:
+#  -DMATH_ENABLE_SWIZZLE
+#       the swizzle feature is optional as it
+#       severely slows down compilation and bloats the binary sizes
+#  -DMATH_REMOVE_PT_NAMESPACE
 set(MY_COMPILE_FLAGS "-Wall -Wextra")
 set(CMAKE_C_FLAGS ${MY_COMPILE_FLAGS})
 set(CMAKE_CXX_FLAGS ${MY_COMPILE_FLAGS})
