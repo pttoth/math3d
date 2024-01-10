@@ -31,9 +31,6 @@
 		return FLOAT2_METHOD_RETURN_TYPE ( :: FLOAT2_METHOD_NAME (x, a.x, b.x), :: FLOAT2_METHOD_NAME (y, a.y, b.y));	\
 	}
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 class bool1;
@@ -396,7 +393,3 @@ public:
 };
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

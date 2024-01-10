@@ -21,9 +21,6 @@
 		return t. FLOAT2SWIZZLE_METHOD_NAME (o);	\
 	}
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 template<int nBase, class T, int s0=0, int s1=1, int s2=2, int s3=3>
@@ -42,7 +39,3 @@ class float2swizzle : public floatswizzle<nBase, T, int2, bool2, s0, s1, s2, s3>
 };
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

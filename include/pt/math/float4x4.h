@@ -8,9 +8,6 @@
 #pragma once
 
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 class bool1;
@@ -447,7 +444,3 @@ inline const float4& operator*=(float4& v, const float4x4& m)
 }
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

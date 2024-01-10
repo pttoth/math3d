@@ -29,7 +29,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 #  -DMATH_ENABLE_SWIZZLE
 #       the swizzle feature is optional as it
 #       severely slows down compilation and bloats the binary sizes
-#  -DMATH_REMOVE_PT_NAMESPACE
 set(MY_COMPILE_FLAGS "-Wall -Wextra")
 set(CMAKE_C_FLAGS ${MY_COMPILE_FLAGS})
 set(CMAKE_CXX_FLAGS ${MY_COMPILE_FLAGS})
@@ -71,6 +70,5 @@ set_target_properties(math3d PROPERTIES COMPILE_FLAGS
 #define these to enable/disable features
 #  note that you need to define these in the project too where you link the library!
 target_compile_definitions(math3d PRIVATE
-#    MATH_REMOVE_PT_NAMESPACE=1
 #    MATH_ENABLE_SWIZZLE=1
 )

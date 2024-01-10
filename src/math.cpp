@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-using namespace pt::math;
+using namespace math;
 
 std::string
 VectorToString(size_t count, const float* const v, Verbosity mode)
@@ -31,22 +31,22 @@ VectorToString(size_t count, const float* const v, Verbosity mode)
 }
 
 
-std::string pt::math::
+std::string math::
 Float3ToString(const float3 &v, Verbosity mode)
 {
     return VectorToString(3, v.v, mode);
 }
 
 
-std::string pt::math::
+std::string math::
 Float4ToString(const float4 &v, Verbosity mode)
 {
     return VectorToString(4, v.v, mode);
 }
 
 
-std::string pt::math::
-Float4x4ToString(const pt::math::float4x4& m, Verbosity mode)
+std::string math::
+Float4x4ToString(const math::float4x4& m, Verbosity mode)
 {
     std::stringstream ss;
     if(mode == Verbosity::FRIENDLY){
