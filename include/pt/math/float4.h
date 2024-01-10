@@ -30,9 +30,6 @@
 		return FLOAT4_METHOD_RETURN_TYPE ( :: FLOAT4_METHOD_NAME (x, a.x, b.x), :: FLOAT4_METHOD_NAME (y, a.y, b.y), :: FLOAT4_METHOD_NAME (z, a.z, b.z), :: FLOAT4_METHOD_NAME (w, a.w, b.w));	\
 	}
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 class bool1;
@@ -751,7 +748,3 @@ public:
 };
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

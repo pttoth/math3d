@@ -44,7 +44,6 @@
 
 #include "math/float4x4.h"
 
-namespace pt{
 namespace math{
 
 //controls print functions' verbosity
@@ -77,7 +76,7 @@ Vecf3FromVecf4(const float4& vec)
 }
 
 
-} }
+} // math
 
 #pragma GCC diagnostic pop
 //#pragma warning( enable : 4201 )

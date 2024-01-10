@@ -9,11 +9,7 @@
 //#include "DXUT.h"
 #include "pt/math.h"
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-using namespace pt::math;
-#else
 using namespace math;
-#endif
 
 const bool1 bool1::zero(false);
 const bool1 bool1::xUnit(true);

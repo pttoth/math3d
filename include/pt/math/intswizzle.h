@@ -54,9 +54,6 @@
 		return t. INTSWIZZLE_METHOD_NAME ( a, b );	\
 	}
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 template<int nBase, class T, class B, int s0=0, int s1=0, int s2=0, int s3=0>
@@ -144,7 +141,3 @@ public:
 };
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

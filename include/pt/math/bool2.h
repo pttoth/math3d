@@ -9,9 +9,6 @@
 
 #include "boolswizzle.h"
 
-#ifndef MATH_REMOVE_PT_NAMESPACE
-namespace pt {
-#endif
 namespace math {
 
 class bool1;
@@ -166,7 +163,3 @@ public:
 };
 
 } //math
-
-#ifndef MATH_REMOVE_PT_NAMESPACE
-} //PT
-#endif

@@ -6,17 +6,18 @@ scriptdir=$(pwd)
 popd > /dev/null
 
 #move to project root directory
-pushd $scriptdir/..
+pushd "${scriptdir}"/..
 
-cmake . -Bbuild -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+builddir="./build/debian"
+cmake . -B"${builddir}" -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
 
-cd build
+pushd "${builddir}"
 
 #get available core count
 cores=$(nproc)
 
 make -j $cores
 
-cd ..
+popd #from $builddir
 
-popd
+popd #from $scriptdir

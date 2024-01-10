@@ -8,13 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(MY_PROJ_ROOT ${PROJECT_SOURCE_DIR})
 set(MY_BUILD_DIR ${MY_PROJ_ROOT}/build)
-set(MY_OUTPUT_DIR_WIN32 ${MY_PROJ_ROOT}/bin/win32)
-set(MY_OUTPUT_DIR_WIN64 ${MY_PROJ_ROOT}/bin/win64)
-set(MY_OUTPUT_DIR_DEBIAN ${MY_PROJ_ROOT}/bin/debian)
 
 #set up actual output directory
-set(MY_OUTPUT_DIR ${MY_OUTPUT_DIR_DEBIAN})
-set(MY_OUTPUT_DIR_DEBUG ${MY_OUTPUT_DIR}_debug)
+set(MY_OUTPUT_DIR ${MY_PROJ_ROOT}/bin)
+set(MY_OUTPUT_DIR_DEBUG ${MY_OUTPUT_DIR}/debug)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${MY_OUTPUT_DIR})
@@ -28,6 +25,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${MY_OUTPUT_DIR_DEBUG})
 
+#available configurations:
+#  -DMATH_ENABLE_SWIZZLE
+#       the swizzle feature is optional as it
+#       severely slows down compilation and bloats the binary sizes
 set(MY_COMPILE_FLAGS "-Wall -Wextra")
 set(CMAKE_C_FLAGS ${MY_COMPILE_FLAGS})
 set(CMAKE_CXX_FLAGS ${MY_COMPILE_FLAGS})
@@ -69,6 +70,5 @@ set_target_properties(math3d PROPERTIES COMPILE_FLAGS
 #define these to enable/disable features
 #  note that you need to define these in the project too where you link the library!
 target_compile_definitions(math3d PRIVATE
-#    MATH_REMOVE_PT_NAMESPACE=1
 #    MATH_ENABLE_SWIZZLE=1
 )
