@@ -8,3 +8,7 @@ create ToString functions to all classes
 write changelog
 
 --------------------------------------------------
+
+random
+    currently uses rand()
+    use newer
