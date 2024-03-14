@@ -5,7 +5,7 @@
 using namespace math;
 
 std::string
-VectorToString(size_t count, const float* const v, Verbosity mode)
+VectorToString( size_t count, const float* const v, Verbosity mode )
 {
     std::stringstream ss;
     if(mode == Verbosity::FRIENDLY){
@@ -32,21 +32,28 @@ VectorToString(size_t count, const float* const v, Verbosity mode)
 
 
 std::string math::
-Float3ToString(const float3 &v, Verbosity mode)
+ToString( const float2& v, Verbosity mode )
 {
-    return VectorToString(3, v.v, mode);
+    return VectorToString( 2, v.v, mode );
 }
 
 
 std::string math::
-Float4ToString(const float4 &v, Verbosity mode)
+ToString( const float3& v, Verbosity mode )
 {
-    return VectorToString(4, v.v, mode);
+    return VectorToString( 3, v.v, mode );
 }
 
 
 std::string math::
-Float4x4ToString(const math::float4x4& m, Verbosity mode)
+ToString( const float4& v, Verbosity mode )
+{
+    return VectorToString( 4, v.v, mode );
+}
+
+
+std::string math::
+ToString( const math::float4x4& m, Verbosity mode )
 {
     std::stringstream ss;
     if(mode == Verbosity::FRIENDLY){
@@ -78,3 +85,5 @@ Float4x4ToString(const math::float4x4& m, Verbosity mode)
     }
     return ss.str();
 }
+
+

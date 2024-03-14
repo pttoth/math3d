@@ -46,16 +46,21 @@
 
 namespace math{
 
+using Vec2 = math::float2;
+using Vec3 = math::float3;
+using Vec4 = math::float4;
+using Mat4 = math::float4x4;
+
 //controls print functions' verbosity
 enum class Verbosity{
     COMPACT,
     FRIENDLY
 };
 
-std::string Float3ToString(const float3& v, Verbosity mode = Verbosity::FRIENDLY);
-std::string Float4ToString(const float4& v, Verbosity mode = Verbosity::FRIENDLY);
-
-std::string Float4x4ToString(const float4x4& m, Verbosity mode = Verbosity::FRIENDLY);
+std::string ToString( const float2& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float3& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float4& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float4x4& m, Verbosity mode = Verbosity::FRIENDLY );
 
 inline float
 CalcAngle(const float3& a, const float3& b)
