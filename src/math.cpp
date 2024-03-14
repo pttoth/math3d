@@ -60,9 +60,15 @@ ToString( const math::float4x4& m, Verbosity mode )
         ss << "[\n";
         for(size_t j=0; j<4; ++j){
             for(size_t i=0; i<4; ++i){
+                size_t lastlength = ss.tellp();
                 ss << m.m[j][i];
                 if(i < 3){
-                    ss << ",\t";
+                    size_t len = ((size_t)ss.tellp()) - lastlength; // get length of written float
+                    if( len < 6 ){
+                        ss << ",\t\t";
+                    }else{
+                        ss << ",\t";
+                    }
                 }else{
                     ss << ";\n";
                 }
