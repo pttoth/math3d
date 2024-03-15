@@ -46,10 +46,10 @@
 
 namespace math{
 
-using Vec2 = math::float2;
-using Vec3 = math::float3;
-using Vec4 = math::float4;
-using Mat4 = math::float4x4;
+using vec2 = math::float2;
+using vec3 = math::float3;
+using vec4 = math::float4;
+using mat4 = math::float4x4;
 
 //controls print functions' verbosity
 enum class Verbosity{
