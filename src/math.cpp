@@ -64,7 +64,7 @@ ToString( const math::float4x4& m, Verbosity mode )
                 ss << m.m[j][i];
                 if(i < 3){
                     size_t len = ((size_t)ss.tellp()) - lastlength; // get length of written float
-                    if( len < 6 ){
+                    if( len < 7 ){
                         ss << ",\t\t";
                     }else{
                         ss << ",\t";
