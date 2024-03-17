@@ -57,6 +57,14 @@ enum class Verbosity{
     FRIENDLY
 };
 
+struct FRotator{
+    float mPitch = 0.0f;
+    float mYaw = 0.0f;
+    float mRoll = 0.0f;
+
+    math::float4x4 GetTransform() const;
+};
+
 std::string ToString( const float2& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float3& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float4& v, Verbosity mode = Verbosity::FRIENDLY );
