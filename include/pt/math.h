@@ -58,10 +58,12 @@ enum class Verbosity{
 };
 
 struct FRotator{
-    float mPitch = 0.0f;
     float mYaw = 0.0f;
+    float mPitch = 0.0f;
     float mRoll = 0.0f;
 
+    FRotator( float yaw, float pitch, float roll );
+    FRotator( const math::float3& values );
     math::float4x4 GetTransform() const;
 };
 

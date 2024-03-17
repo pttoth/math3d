@@ -93,6 +93,18 @@ ToString( const math::float4x4& m, Verbosity mode )
 }
 
 
+FRotator::
+FRotator( float yaw, float pitch, float roll ):
+    mYaw( yaw ), mPitch( pitch ), mRoll( roll )
+{}
+
+
+FRotator::
+FRotator( const float3& values ):
+    FRotator( values.x, values.y, values.z )
+{}
+
+
 float4x4 FRotator::
 GetTransform() const
 {
@@ -134,7 +146,7 @@ GetTransform() const
     transform.m[1][1] = sinf_mYaw * sinf_mPitch * sinf_mRoll + cosf_mYaw * cosf_mRoll;
     transform.m[1][2] = cosf_mYaw * sinf_mPitch * sinf_mRoll - sinf_mYaw * cosf_mRoll;
 
-    transform.m[2][0] = sinf_mPitch * -1;
+    transform.m[2][0] = (-1) * sinf_mPitch;
     transform.m[2][1] = sinf_mYaw * cosf_mPitch;
     transform.m[2][2] = cosf_mYaw * cosf_mPitch;
 
