@@ -4,10 +4,13 @@
 
 using namespace math;
 
+namespace concept{
+
+template<class T>
 std::string
-VectorToString( size_t count, const float* const v, Verbosity mode )
+VectorClassToString( size_t count, const T* const v, Verbosity mode )
 {
-    std::stringstream ss;
+    std::ostringstream ss;
     if(mode == Verbosity::FRIENDLY){
         ss << "(";
         for(size_t i=0; i<count; ++i){
@@ -28,6 +31,44 @@ VectorToString( size_t count, const float* const v, Verbosity mode )
         ss << ")";
     }
     return ss.str();
+}
+
+} // end of namespace 'concept'
+
+
+
+std::string
+VectorToString( size_t count, const float* const v, Verbosity mode )
+{
+    return concept::VectorClassToString<float>( count, v, mode );
+}
+
+
+std::string
+VectorToString( size_t count, const int* const v, Verbosity mode )
+{
+    return concept::VectorClassToString<int>( count, v, mode );
+}
+
+
+std::string math::
+ToString( const int2& iv, Verbosity mode )
+{
+    return VectorToString( 2, iv.v, mode );
+}
+
+
+std::string math::
+ToString( const int3& iv, Verbosity mode )
+{
+    return VectorToString( 3, iv.v, mode );
+}
+
+
+std::string math::
+ToString( const int4& iv, Verbosity mode )
+{
+    return VectorToString( 4, iv.v, mode );
 }
 
 
@@ -108,18 +149,17 @@ FRotator( const float3& values ):
 float4x4 FRotator::
 GetTransform() const
 {
-/*
     math::float4x4 yawMtx = math::float4x4::identity;
     math::float4x4 pitchMtx = math::float4x4::identity;
     math::float4x4 rollMtx = math::float4x4::identity;
-*/
+
     float cosf_mYaw     = cosf( mYaw );
-    float sinf_mYaw     = 1 - cosf_mYaw;
+    float sinf_mYaw     = sinf( mYaw );
     float cosf_mPitch   = cosf( mPitch );
-    float sinf_mPitch   = 1 - cosf_mPitch;
+    float sinf_mPitch   = sinf( mPitch );
     float cosf_mRoll    = cosf( mRoll );
-    float sinf_mRoll    = 1 - cosf_mRoll;
-/*
+    float sinf_mRoll    = sinf( mRoll );
+
     yawMtx.m[0][0] = cosf_mYaw;
     yawMtx.m[0][1] = sinf_mYaw * -1;
     yawMtx.m[1][0] = sinf_mYaw;
@@ -132,10 +172,11 @@ GetTransform() const
     rollMtx.m[1][2] = sinf_mRoll * -1;
     rollMtx.m[2][1] = sinf_mRoll;
     rollMtx.m[2][2] = cosf_mRoll;
-*/
-    //return yawMtx * pitchMtx * rollMtx;
 
+    return yawMtx * pitchMtx * rollMtx;
 
+    //buggy
+    //  TODO: fix
     // this is the resulting matrix from the above matrix multiplications
     math::float4x4 transform = math::float4x4::identity;
     transform.m[0][0] = cosf_mPitch * cosf_mRoll;
@@ -152,3 +193,4 @@ GetTransform() const
 
     return transform;
 }
+

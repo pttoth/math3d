@@ -67,6 +67,9 @@ struct FRotator{
     math::float4x4 GetTransform() const;
 };
 
+std::string ToString( const int2& iv, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const int3& iv, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const int4& iv, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float2& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float3& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float4& v, Verbosity mode = Verbosity::FRIENDLY );
@@ -89,7 +92,6 @@ Vecf3FromVecf4(const float4& vec)
 {
     return float3( vec.x/vec.w, vec.y/vec.w, vec.z/vec.w );
 }
-
 
 } // math
 
