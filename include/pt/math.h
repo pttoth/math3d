@@ -46,16 +46,34 @@
 
 namespace math{
 
+using vec2 = math::float2;
+using vec3 = math::float3;
+using vec4 = math::float4;
+using mat4 = math::float4x4;
+
 //controls print functions' verbosity
 enum class Verbosity{
     COMPACT,
     FRIENDLY
 };
 
-std::string Float3ToString(const float3& v, Verbosity mode = Verbosity::FRIENDLY);
-std::string Float4ToString(const float4& v, Verbosity mode = Verbosity::FRIENDLY);
+struct FRotator{
+    float mYaw = 0.0f;
+    float mPitch = 0.0f;
+    float mRoll = 0.0f;
 
-std::string Float4x4ToString(const float4x4& m, Verbosity mode = Verbosity::FRIENDLY);
+    FRotator( float yaw, float pitch, float roll );
+    FRotator( const math::float3& values );
+    math::float4x4 GetTransform() const;
+};
+
+std::string ToString( const int2& iv, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const int3& iv, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const int4& iv, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float2& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float3& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float4& v, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const float4x4& m, Verbosity mode = Verbosity::FRIENDLY );
 
 inline float
 CalcAngle(const float3& a, const float3& b)
@@ -74,7 +92,6 @@ Vecf3FromVecf4(const float4& vec)
 {
     return float3( vec.x/vec.w, vec.y/vec.w, vec.z/vec.w );
 }
-
 
 } // math
 
