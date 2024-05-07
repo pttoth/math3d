@@ -134,63 +134,15 @@ ToString( const math::float4x4& m, Verbosity mode )
 }
 
 
-FRotator::
-FRotator( float yaw, float pitch, float roll ):
-    mYaw( yaw ), mPitch( pitch ), mRoll( roll )
-{}
-
-
-FRotator::
-FRotator( const float3& values ):
-    FRotator( values.x, values.y, values.z )
-{}
-
-
-float4x4 FRotator::
-GetTransform() const
+std::string math::
+ToString( const FRotator& r, Verbosity mode )
 {
-    math::float4x4 yawMtx = math::float4x4::identity;
-    math::float4x4 pitchMtx = math::float4x4::identity;
-    math::float4x4 rollMtx = math::float4x4::identity;
-
-    float cosf_mYaw     = cosf( mYaw );
-    float sinf_mYaw     = sinf( mYaw );
-    float cosf_mPitch   = cosf( mPitch );
-    float sinf_mPitch   = sinf( mPitch );
-    float cosf_mRoll    = cosf( mRoll );
-    float sinf_mRoll    = sinf( mRoll );
-
-    yawMtx.m[0][0] = cosf_mYaw;
-    yawMtx.m[0][1] = sinf_mYaw * -1;
-    yawMtx.m[1][0] = sinf_mYaw;
-    yawMtx.m[1][1] = cosf_mYaw;
-    pitchMtx.m[0][0] = cosf_mPitch;
-    pitchMtx.m[0][2] = sinf_mPitch;
-    pitchMtx.m[2][0] = sinf_mPitch * -1;
-    pitchMtx.m[2][2] = cosf_mPitch;
-    rollMtx.m[1][1] = cosf_mRoll;
-    rollMtx.m[1][2] = sinf_mRoll * -1;
-    rollMtx.m[2][1] = sinf_mRoll;
-    rollMtx.m[2][2] = cosf_mRoll;
-
-    return yawMtx * pitchMtx * rollMtx;
-
-    //buggy
-    //  TODO: fix
-    // this is the resulting matrix from the above matrix multiplications
-    math::float4x4 transform = math::float4x4::identity;
-    transform.m[0][0] = cosf_mPitch * cosf_mRoll;
-    transform.m[0][1] = sinf_mYaw * sinf_mPitch * cosf_mRoll - cosf_mYaw * sinf_mRoll;
-    transform.m[0][2] = cosf_mYaw * sinf_mPitch * cosf_mRoll + sinf_mYaw * sinf_mRoll;
-
-    transform.m[1][0] = cosf_mPitch * sinf_mRoll;
-    transform.m[1][1] = sinf_mYaw * sinf_mPitch * sinf_mRoll + cosf_mYaw * cosf_mRoll;
-    transform.m[1][2] = cosf_mYaw * sinf_mPitch * sinf_mRoll - sinf_mYaw * cosf_mRoll;
-
-    transform.m[2][0] = (-1) * sinf_mPitch;
-    transform.m[2][1] = sinf_mYaw * cosf_mPitch;
-    transform.m[2][2] = cosf_mYaw * cosf_mPitch;
-
-    return transform;
+    return ToString( float3(r.mPitch, r.mYaw, r.mRoll), mode );
 }
 
+
+std::string math::
+ToString( const quaternion& q, Verbosity mode )
+{
+    return ToString( float4( q.v[0], q.v[1], q.v[2], q.w), mode );
+}

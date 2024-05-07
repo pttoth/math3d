@@ -44,28 +44,23 @@
 
 #include "math/float4x4.h"
 
+#include "math/FRotator.h"
+#include "math/quaternion.h"
+
 namespace math{
 
 using vec2 = math::float2;
 using vec3 = math::float3;
 using vec4 = math::float4;
 using mat4 = math::float4x4;
+using quat = math::quaternion;
 
-//controls print functions' verbosity
+// controls print functions' output verbosity
 enum class Verbosity{
     COMPACT,
     FRIENDLY
 };
 
-struct FRotator{
-    float mYaw = 0.0f;
-    float mPitch = 0.0f;
-    float mRoll = 0.0f;
-
-    FRotator( float yaw, float pitch, float roll );
-    FRotator( const math::float3& values );
-    math::float4x4 GetTransform() const;
-};
 
 std::string ToString( const int2& iv, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const int3& iv, Verbosity mode = Verbosity::FRIENDLY );
@@ -74,21 +69,39 @@ std::string ToString( const float2& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float3& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float4& v, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const float4x4& m, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const FRotator& r, Verbosity mode = Verbosity::FRIENDLY );
+std::string ToString( const quaternion& q, Verbosity mode = Verbosity::FRIENDLY );
+
 
 inline float
-CalcAngle(const float3& a, const float3& b)
+DegToRad( float angle )
 {
+    return angle * M_PI/180.0f;
+}
+
+inline float
+RadToDeg( float angle )
+{
+    return angle * 180.0f/M_PI;
+}
+
+
+inline float
+CalcAngle( const float3& a, const float3& b )
+{
+    // TODO: use atan2
     return acosf( a.dot(b) / sqrtf( (a.lengthSquared() * b.lengthSquared()) ) );
 }
 
 inline float
-CalcAngle(const float4& a, const float4& b)
+CalcAngle( const float4& a, const float4& b )
 {
+    // TODO: use atan2
     return acosf( a.dot(b) / sqrtf( (a.lengthSquared() * b.lengthSquared()) ) );
 }
 
 inline float3
-Vecf3FromVecf4(const float4& vec)
+Vecf3FromVecf4( const float4& vec )
 {
     return float3( vec.x/vec.w, vec.y/vec.w, vec.z/vec.w );
 }
