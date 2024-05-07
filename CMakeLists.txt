@@ -36,6 +36,9 @@ set(CMAKE_CXX_FLAGS ${MY_COMPILE_FLAGS})
 add_library(math3d
     ${MY_PROJ_ROOT}/src/constants.cpp
     ${MY_PROJ_ROOT}/src/math.cpp
+    ${MY_PROJ_ROOT}/src/FRotator.cpp
+    ${MY_PROJ_ROOT}/src/quaternion.cpp
+    ${MY_PROJ_ROOT}/src/HPL1/Quaternion.cpp
     ${MY_PROJ_ROOT}/include/pt/math.h
     ${MY_PROJ_ROOT}/include/pt/math/bool1.h
     ${MY_PROJ_ROOT}/include/pt/math/bool2.h
@@ -56,6 +59,9 @@ add_library(math3d
     ${MY_PROJ_ROOT}/include/pt/math/int3.h
     ${MY_PROJ_ROOT}/include/pt/math/int4.h
     ${MY_PROJ_ROOT}/include/pt/math/intswizzle.h
+    ${MY_PROJ_ROOT}/include/pt/math/FRotator.h
+    ${MY_PROJ_ROOT}/include/pt/math/quaternion.h
+    ${MY_PROJ_ROOT}/include/pt/HPL1/Quaternion.h
 )
 
 target_include_directories(math3d PRIVATE
