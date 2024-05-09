@@ -21,10 +21,24 @@
 #ifndef HPL_QUATERNION_H
 #define HPL_QUATERNION_H
 
-#include "pt/math/float3.h"
-#include "pt/math/float4x4.h"
-
 namespace math{
+
+class bool1;
+class bool2;
+class bool3;
+class bool4;
+
+class int1;
+class int2;
+class int3;
+class int4;
+
+class float1;
+class float2;
+class float3;
+class float4;
+
+class float4x4;
 
 namespace hpl {
 

@@ -4,6 +4,23 @@
 
 namespace math{
 
+class bool1;
+class bool2;
+class bool3;
+class bool4;
+
+class int1;
+class int2;
+class int3;
+class int4;
+
+class float1;
+class float2;
+class float3;
+class float4;
+
+class float4x4;
+
 // note: For now, this is just a wrapper around Frictional Games' quaternion implementation
 class quaternion
 {

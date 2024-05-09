@@ -1,5 +1,3 @@
-#include "pt/math/quaternion.h"
-
 #include "pt/math.h"
 
 using namespace math;
