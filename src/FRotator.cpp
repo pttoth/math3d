@@ -86,7 +86,7 @@ GetTransform() const
     //return rollMtx * yawMtx * pitchMtx;
 
     mat4 res = yawMtx * pitchMtx;
-    rollMtx = mat4::rotation( float3( res._00, res._10, res._20 ), mRoll );
+    rollMtx = mat4::rotation( float3( res._00, res._10, res._20 ), DegToRad( mRoll ) );
     return rollMtx * res;
 }
 
