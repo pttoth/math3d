@@ -58,6 +58,13 @@ public:
 			float w;
 		};
 		
+        struct {
+            float r;
+            float g;
+            float b;
+            float a;
+        };
+
 		float v[4];
 #ifdef MATH_ENABLE_SWIZZLE
 		float2swizzle<4, float2, 0, 0> xx;

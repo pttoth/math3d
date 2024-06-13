@@ -60,6 +60,12 @@ public:
 			float z;
 		};
 
+        struct {
+            float r;
+            float g;
+            float b;
+        };
+
 		float v[3];
 #ifdef MATH_ENABLE_SWIZZLE
 		float2swizzle<3, float2, 0, 0> xx;

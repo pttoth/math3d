@@ -38,6 +38,7 @@ quaternion &quaternion::
 operator=( const quaternion& other )
 {
     mQuat = other.mQuat;
+    return *this;
 }
 
 
