@@ -743,6 +743,12 @@ public:
 			rand() * range / RAND_MAX + lower);
 	}
 
+    // swizzle-independent workaround to convert vec4 to vec3 without division
+    float3 XYZ() const
+    {
+        return float3(x,y,z);
+    }
+
     /**
      * @brief zero: {0,0,0,0}
      */
