@@ -743,14 +743,55 @@ public:
 			rand() * range / RAND_MAX + lower);
 	}
 
-	static const float4 zero;
-	static const float4 xUnit;
-	static const float4 yUnit;
-	static const float4 zUnit;
-	static const float4 wUnit;
-	static const float4 one;
+    /**
+     * @brief zero: {0,0,0,0}
+     */
+    static const float4 zero;
 
-	static const float4 identity;
+    /**
+     * @brief xUnit: {1,0,0,0}
+     */
+    static const float4 xUnit;
+
+    /**
+     * @brief yUnit: {0,1,0,0}
+     */
+    static const float4 yUnit;
+
+    /**
+     * @brief zUnit: {0,0,1,0}
+     */
+    static const float4 zUnit;
+
+    /**
+     * @brief wUnit: {0,0,0,1}
+     */
+    static const float4 wUnit;
+
+    /**
+     * @brief one: {1,1,1,1}
+     */
+    static const float4 one;
+
+    /**
+     * @brief xOne: {1,0,0,1}
+     */
+    static const float4 xOne;
+
+    /**
+     * @brief yOne: {0,1,0,1}
+     */
+    static const float4 yOne;
+
+    /**
+     * @brief zOne: {0,0,1,1}
+     */
+    static const float4 zOne;
+
+    /**
+     * @brief identity: {0,0,0,1}
+     */
+    static const float4 identity;
 
 };
 

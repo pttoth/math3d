@@ -217,6 +217,7 @@ public:
 		return t;
 	}
 
+    // left-handed, clockwise rotation (TODO: verify)
 	static float4x4 rotation(const float3& axis, float angle)
 	{
 	    float4x4 r = identity;

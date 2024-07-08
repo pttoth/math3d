@@ -106,6 +106,10 @@ const float4 float4::zUnit(0.0f, 0.0f, 1.0f, 0.0f);
 const float4 float4::wUnit(0.0f, 0.0f, 0.0f, 1.0f);
 const float4 float4::one(1.0f, 1.0f, 1.0f, 1.0f);
 
+const float4 float4::xOne(1.0f, 0.0f, 0.0f, 1.0f);
+const float4 float4::yOne(0.0f, 1.0f, 0.0f, 1.0f);
+const float4 float4::zOne(0.0f, 0.0f, 1.0f, 1.0f);
+
 const float4 float4::identity(0.0f, 0.0f, 0.0f, 1.0f);
 
 const float4x4 float4x4::identity(
