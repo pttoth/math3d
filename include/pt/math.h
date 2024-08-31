@@ -63,6 +63,7 @@ enum class Verbosity{
     FRIENDLY
 };
 
+bool ApproxEquals( float a, float b );
 
 std::string ToString( const int2& iv, Verbosity mode = Verbosity::FRIENDLY );
 std::string ToString( const int3& iv, Verbosity mode = Verbosity::FRIENDLY );

@@ -146,3 +146,15 @@ ToString( const quaternion& q, Verbosity mode )
 {
     return ToString( float4( q.v[0], q.v[1], q.v[2], q.w), mode );
 }
+
+
+bool math::
+ApproxEquals( float a, float b )
+{
+    float diff = a - b;
+    if( (-PT_MATH_ERROR_MARGIN < diff) && (diff < PT_MATH_ERROR_MARGIN) ){
+        return true;
+    }
+
+    return false;
+}
